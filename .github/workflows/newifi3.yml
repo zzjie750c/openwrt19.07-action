@@ -24,7 +24,7 @@ on:
 env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: dev-19.07
-  CONFIG_FILE: .config
+  CONFIG_FILE: newifi3.config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
   SSH_ACTIONS: true
@@ -80,9 +80,9 @@ jobs:
         ../$DIY_SH
         make defconfig
 
-    - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true'
+    #- name: SSH connection to Actions
+    #  uses: P3TERX/debugger-action@master
+     # if: env.SSH_ACTIONS == 'true'
 
     - name: Download package
       id: package
