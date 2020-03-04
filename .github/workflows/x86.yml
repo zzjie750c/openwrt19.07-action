@@ -16,8 +16,8 @@ on:
       - dev-19.07
     paths:
       - '.config'
-  schedule:
-      - cron: 0 22 * * *
+  #schedule:
+  #    - cron: 0 22 * * *
   watch:
     types: [started]
 
