@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: K3 OpenWrt
+name: Build OpenWrt
 
 on:
   release:
@@ -16,8 +16,8 @@ on:
       - dev-19.07
     paths:
       - '.config'
- # schedule:
- #     - cron: 0 22 * * *
+  #schedule:
+  #    - cron: 0 22 * * *
   watch:
     types: [started]
 
@@ -77,6 +77,7 @@ jobs:
         cd openwrt
         ../$DIY_SH
         make defconfig
+        sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3|' target/linux/bcm53xx/image/Makefile
     #- name: SSH connection to Actions
     #  uses: P3TERX/debugger-action@master
     #  if: env.SSH_ACTIONS == 'true'
