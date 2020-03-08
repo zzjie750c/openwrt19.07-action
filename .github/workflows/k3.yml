@@ -78,7 +78,7 @@ jobs:
         ../$DIY_SH
         make defconfig
         sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm-k3|TARGET_DEVICES += phicomm-k3|' target/linux/bcm53xx/image/Makefile
-        sed -e 385a\<div class="tr"><div class="td left" width="33%"><%:CPU Temperature%></div><div class="td left"><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%></div></div> feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+        #sed -e 385a\<div class="tr"><div class="td left" width="33%"><%:CPU Temperature%></div><div class="td left"><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%></div></div> feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
     #- name: SSH connection to Actions
     #  uses: P3TERX/debugger-action@master
     #  if: env.SSH_ACTIONS == 'true'
