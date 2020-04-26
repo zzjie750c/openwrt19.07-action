@@ -80,6 +80,7 @@ jobs:
         ../$DIY_SH
         make defconfig
 
+    #取消下方注释，可网页端ssh修改config文件，具体操作见action内部介绍
     #- name: SSH connection to Actions
     #  uses: P3TERX/debugger-action@master
      # if: env.SSH_ACTIONS == 'true'
